@@ -1,30 +1,54 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class Movement : Character
 {
-    private Rigidbody2D rb2D;
-    public float moveSpeed = 50f;
-    public float horizontal;
+    public float speed;
+    public float distanceToCollider;
+    public LayerMask collisionLayer;
 
-    void Start()
+    private float horizontalInput;
+
+    protected override void Initializtion()
     {
-        rb2D = gameObject.GetComponent<Rigidbody2D>();
+        base.Initializtion();
     }
 
-    // Update is called once per frame
+    // Update is called once per frame 
     void Update()
     {
+        if (Input.GetAxis("Horizontal") != 0)
+        {
+            horizontalInput = Input.GetAxis("Horizontal");
+        }
+        else
+        {
+            horizontalInput = 0;
+        }
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        rb.velocity = new Vector2(horizontalInput * speed * Time.deltaTime, rb.velocity.y);
+        if (horizontalInput > 0 && character.isFacingLeft)
         {
-            rb2D.AddForce(new Vector2(1 * moveSpeed, 0));
+            character.isFacingLeft = false;
+            Flip();
         }
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        if (horizontalInput < 0 && !character.isFacingLeft)
         {
-            rb2D.AddForce(new Vector2(-1 * moveSpeed, 0));
+            character.isFacingLeft = true;
+            Flip();
+        }
+        SpeedModifier();
+    }
+
+    private void SpeedModifier()
+    {
+        if ((rb.velocity.x > 0 && CollisionCheck(Vector2.right, distanceToCollider, collisionLayer)) || (rb.velocity.x < 0 && CollisionCheck(Vector2.left, distanceToCollider, collisionLayer)))
+        {
+            rb.velocity = new Vector2(.01f, rb.velocity.y);
         }
     }
 }
