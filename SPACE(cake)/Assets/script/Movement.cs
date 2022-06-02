@@ -3,7 +3,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     private Rigidbody2D rb2D;
-    public float moveSpeed = 15f;
+    public float moveSpeed = 50f;
     public float horizontal;
     void Start()
     {
