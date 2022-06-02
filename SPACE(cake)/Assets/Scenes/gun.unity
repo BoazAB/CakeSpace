@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8a9eccfd4f49e4381852194e19590d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firepoint: {fileID: 0}
+  firepoint: {fileID: 373158390}
   bulletprefab: {fileID: 2994674873943241951, guid: 568da5bb9a909374a85db37e85be730f, type: 3}
 --- !u!4 &1042673696 stripped
 Transform:
