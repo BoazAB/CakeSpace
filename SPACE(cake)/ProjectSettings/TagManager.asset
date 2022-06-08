@@ -7,6 +7,9 @@ TagManager:
   - Platform
   - portal
   - player
+  - egg
+  - weed
+  - flour
   layers:
   - Default
   - TransparentFX
