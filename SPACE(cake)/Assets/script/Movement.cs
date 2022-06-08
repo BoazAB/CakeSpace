@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Movement : Character
 {
+<<<<<<< HEAD
     public float speed;
     public float distanceToCollider;
     public LayerMask collisionLayer;
@@ -11,6 +12,12 @@ public class Movement : Character
     private float horizontalInput;
 
     protected override void Initializtion()
+=======
+    private Rigidbody2D rb2D;
+    public float moveSpeed = 50f;
+    public float horizontal;
+    void Start()
+>>>>>>> 2efc7d7ec40a33b64e4355b521bbe2bab92c5e9a
     {
         base.Initializtion();
     }
