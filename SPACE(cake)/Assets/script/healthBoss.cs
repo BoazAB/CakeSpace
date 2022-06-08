@@ -2,29 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class health : MonoBehaviour
+public class healthBoss : MonoBehaviour
 {
     public int curHealth = 0;
     public int maxHealth = 100;
     public bool triggered;
     public GameObject thisObjDies;
-    public healthBar healthBar;
-    public static health instance;
+    public healthBarBoss healthBarBoss;
 
-    private void Awake(){
-        instance = this;
-    }
     void Start()
     {
         curHealth = maxHealth;
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+            {
+                DamagePlayer(10);
+            }
+    }
     public void DamagePlayer(int damage)
     {
         curHealth -= damage;
-        healthBar.SetHealth(curHealth);
+        healthBarBoss.SetHealth(curHealth);
         if(curHealth <= 0){
             Destroy(thisObjDies);
-            Debug.Log("You died");
+            Debug.Log("Recieved [Item]");
         }
     }
 }

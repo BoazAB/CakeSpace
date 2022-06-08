@@ -10,6 +10,7 @@ TagManager:
   - egg
   - weed
   - flour
+  - Boss
   layers:
   - Default
   - TransparentFX
