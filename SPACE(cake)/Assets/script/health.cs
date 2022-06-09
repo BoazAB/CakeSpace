@@ -21,7 +21,7 @@ public class health : MonoBehaviour
     public void DamagePlayer(int damage)
     {
         curHealth -= damage;
-        healthBar.SetHealth(curHealth);
+        //healthBar.SetHealth(curHealth);
         if(curHealth <= 0){
             Destroy(thisObjDies);
             Debug.Log("You died");
