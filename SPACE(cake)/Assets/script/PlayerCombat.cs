@@ -8,7 +8,7 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask enemyLayers;
 
     public float AttackRange = 0.5f;
-    public float AttackDmg = 50f;
+    public int AttackDmg = 50;
     
     // Update is called once per frame
     void Update()
@@ -25,7 +25,7 @@ public class PlayerCombat : MonoBehaviour
         
         foreach(Collider2D Enemy in hitEnemy)
         {
-            Enemy.GetComponent<health>().DamagePlayer(20);
+            Enemy.GetComponent<health>().DamagePlayer(AttackDmg);
         }
     }
 }
