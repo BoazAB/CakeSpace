@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class healthBoss : MonoBehaviour
 {
+    public GameObject item;
     public int curHealth = 0;
     public int maxHealth = 100;
     public bool triggered;
@@ -14,7 +15,6 @@ public class healthBoss : MonoBehaviour
     {
         curHealth = maxHealth;
     }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
@@ -28,6 +28,7 @@ public class healthBoss : MonoBehaviour
         healthBarBoss.SetHealth(curHealth);
         if(curHealth <= 0){
             Destroy(thisObjDies);
+            item.SetActive(true);
             Debug.Log("Recieved [Item]");
         }
     }
