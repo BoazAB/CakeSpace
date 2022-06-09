@@ -22,7 +22,6 @@ public class Movement : Character
             horizontalInput = 0;
         }
     }
-
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontalInput * speed * Time.deltaTime, rb.velocity.y);
