@@ -9,14 +9,12 @@ public class Movement : MonoBehaviour
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     void FixedUpdate()
     {
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W))
+        {
+            rb2D.AddForce(new Vector2(0, 1), ForceMode2D.Impulse);
+        }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             rb2D.AddForce(new Vector2(1 * moveSpeed, 0));

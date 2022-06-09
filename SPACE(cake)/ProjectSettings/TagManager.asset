@@ -7,6 +7,10 @@ TagManager:
   - Platform
   - portal
   - player
+  - egg
+  - weed
+  - flour
+  - Boss
   layers:
   - Default
   - TransparentFX

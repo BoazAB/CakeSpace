@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/scenes/planetChanger.unity
+    guid: defad3fa5374bb54cae3169dce118c61
+  - enabled: 1
+    path: Assets/scenes/planetEgg.unity
+    guid: 4fd206fe969e891459d329e6f3a760ef
+  - enabled: 1
+    path: Assets/scenes/planetFlour.unity
+    guid: 7952bf7b6e724304f8f3184f3f7f97af
+  - enabled: 1
+    path: Assets/scenes/planetWeed.unity
+    guid: 42351b481e6ca624886f579b7e566e3d
   m_configObjects: {}
