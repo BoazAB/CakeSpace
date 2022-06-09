@@ -46,7 +46,7 @@ public class Character : MonoBehaviour
         }
         if (!isFacingLeft)
         {
-            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y);
         }
     }
 
