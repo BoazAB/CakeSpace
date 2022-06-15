@@ -2,35 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    Rigidbody2D rb;
+    [SerializeField]
+    private float movementSpeed = 10;
+    private Rigidbody2D player;
+    [SerializeField]
+    private float jumpHeight = 27;
+    private bool onGround;
 
-    [HideInInspector]
-    public float speed = 100f;
-    private float horizontalInput;
-
-
-    private void Start()
+    void Update()
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
+        Movement();
     }
-
-    private void FixedUpdate()
+    void Awake()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        player = GetComponent<Rigidbody2D>();
 
-        if (horizontalInput != 0)
+    }
+    void Movement()
+    {
+        if (Input.GetKey(KeyCode.A))
         {
-            rb.AddForce(new Vector2(horizontalInput * speed, 0f));
+            transform.position += new Vector3(-movementSpeed, 0) * Time.deltaTime;
         }
-        if (horizontalInput < 0)
+        if (Input.GetKey(KeyCode.D))
         {
-            gameObject.transform.localScale = new Vector2(1, 1);
+            transform.position += new Vector3(movementSpeed, 0) * Time.deltaTime;
         }
-        if (horizontalInput > 0)
+        if ((onGround == true) && (Input.GetKeyDown(KeyCode.W))|| (onGround == true) && (Input.GetKeyDown(KeyCode.UpArrow)))
         {
-            gameObject.transform.localScale = new Vector2(-1, 1);
+            Vector2 jump = new Vector2(0, jumpHeight);
+            player.velocity = new Vector2(player.velocity.x, 0);
+            player.AddForce(jump, ForceMode2D.Impulse);
+            onGround = false;
         }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        onGround = true;
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        onGround = false;
     }
 }
