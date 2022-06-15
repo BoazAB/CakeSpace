@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class healthBarBoss : MonoBehaviour
+public class HealthBarBoss : MonoBehaviour
 {
     public Slider sliderBoss;
     public healthBoss playerHealthBoss;

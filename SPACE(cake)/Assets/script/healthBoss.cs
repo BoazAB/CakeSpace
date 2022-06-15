@@ -9,7 +9,7 @@ public class healthBoss : MonoBehaviour
     public int maxHealth = 100;
     public bool triggered;
     public GameObject thisObjDies;
-    public healthBarBoss healthBarBoss;
+    public HealthBarBoss healthBarBoss;
 
     void Start()
     {

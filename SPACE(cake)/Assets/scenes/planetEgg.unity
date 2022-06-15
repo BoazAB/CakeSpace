@@ -456,9 +456,10 @@ GameObject:
   - component: {fileID: 1391583535}
   - component: {fileID: 1391583534}
   - component: {fileID: 1391583533}
-  - component: {fileID: 1391583537}
-  - component: {fileID: 1391583536}
   - component: {fileID: 1391583538}
+  - component: {fileID: 1391583541}
+  - component: {fileID: 1391583540}
+  - component: {fileID: 1391583539}
   m_Layer: 0
   m_Name: Prototype
   m_TagString: Untagged
@@ -549,43 +550,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1391583536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391583532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 584a59a77d2b08043ad1d6a3f479dd70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFacingLeft: 0
-  isGrounded: 0
-  isJumping: 0
-  spawnFacingLeft: 0
-  speed: 500
-  distanceToCollider: 0.08
-  collisionLayer:
-    serializedVersion: 2
-    m_Bits: 0
---- !u!114 &1391583537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391583532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3aeb61612a2bbbd42bcf60715993729c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFacingLeft: 0
-  isGrounded: 0
-  isJumping: 0
-  spawnFacingLeft: 0
 --- !u!50 &1391583538
 Rigidbody2D:
   serializedVersion: 4
@@ -607,6 +571,57 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1391583539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391583532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec1a2044b7541041af520e53f33472f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFacingLeft: 0
+  isGrounded: 0
+  isJumping: 0
+  spawnFacingLeft: 0
+--- !u!114 &1391583540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391583532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9426bfa3659d547aae451de602f5f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 10
+  jumpHeight: 5
+--- !u!114 &1391583541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391583532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c94fdd59ae12f24da28cd35cae1aebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFacingLeft: 0
+  isGrounded: 0
+  isJumping: 0
+  spawnFacingLeft: 0
+  speed: 250
+  distanceToCollider: 0.08
+  collisionLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1651335045
 GameObject:
   m_ObjectHideFlags: 0
