@@ -40,13 +40,13 @@ public class Character : MonoBehaviour
 
     protected virtual void Flip()
     {
-        if (isFacingLeft)
+        if (!isFacingLeft)
         {
             transform.localScale = facingLeft;
         }
-        if (!isFacingLeft)
+        if (isFacingLeft)
         {
-            transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y);
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
     }
 
