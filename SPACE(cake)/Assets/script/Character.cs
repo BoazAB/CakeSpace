@@ -15,7 +15,7 @@ public class Character : MonoBehaviour
     [HideInInspector]
     public bool isJumping;
 
-    public bool spawnFacingLeft;
+    public bool spawnFacingLeft = true;
     private Vector2 facingLeft;
 
 
