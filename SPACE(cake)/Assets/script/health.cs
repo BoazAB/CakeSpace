@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class health : MonoBehaviour
 {
-    public int curHealth = 0;
+    public int curHealth = 100;
     public int maxHealth = 100;
     public bool triggered;
     public GameObject thisObjDies;
