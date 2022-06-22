@@ -380,7 +380,7 @@ MonoBehaviour:
   isGrounded: 0
   isJumping: 0
   spawnFacingLeft: 1
-  speed: 100
+  speed: 500
   distanceToCollider: 0.08
   collisionLayer:
     serializedVersion: 2

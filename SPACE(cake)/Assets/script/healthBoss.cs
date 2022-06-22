@@ -9,8 +9,7 @@ public class healthBoss : MonoBehaviour
     public int maxHealth = 100;
     public bool triggered;
     public GameObject thisObjDies;
-    public HealthBarBoss healthBarBoss;
-
+    public healthBarBoss hpBarBoss;
     void Start()
     {
         curHealth = maxHealth;
@@ -25,7 +24,7 @@ public class healthBoss : MonoBehaviour
     public void DamagePlayer(int damage)
     {
         curHealth -= damage;
-        healthBarBoss.SetHealth(curHealth);
+        hpBarBoss.SetHealth(curHealth);
         if(curHealth <= 0){
             Destroy(thisObjDies);
             item.SetActive(true);
