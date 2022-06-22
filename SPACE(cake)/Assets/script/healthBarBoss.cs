@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBarBoss : MonoBehaviour
+
+public class healthBarBoss : MonoBehaviour
 {
     public Slider sliderBoss;
     public healthBoss playerHealthBoss;
@@ -15,7 +16,6 @@ public class HealthBarBoss : MonoBehaviour
         sliderBoss.maxValue = playerHealthBoss.maxHealth;
         sliderBoss.value = playerHealthBoss.maxHealth;
     }
-
     public void SetHealth(int hp)
     {
         sliderBoss.value = hp;
