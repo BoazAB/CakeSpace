@@ -8,6 +8,10 @@ public class healthBoss : MonoBehaviour
     public int curHealth = 0;
     public int maxHealth = 100;
     public bool triggered;
+    public GameObject egg;
+    public GameObject weed;
+    public GameObject flour;
+
     public GameObject thisObjDies;
     public healthBarBoss hpBarBoss;
     void Start()
@@ -27,8 +31,21 @@ public class healthBoss : MonoBehaviour
         hpBarBoss.SetHealth(curHealth);
         if(curHealth <= 0){
             Destroy(thisObjDies);
-            item.SetActive(true);
-            Debug.Log("Recieved [Item]");
+            if(thisObjDies.tag == "eggBoss"){
+                egg.SetActive(true);
+                Debug.Log("Recieved [Egg]");
+            }
+            if(thisObjDies.tag == "weedBoss"){
+                weed.SetActive(true);
+                Debug.Log("Recieved [Weed]");
+            }
+            if(thisObjDies.tag == "flourBoss"){
+                flour.SetActive(true);
+                Debug.Log("Recieved [Flour]");
+            }
+            else{
+                Debug.Log("no tag has been found on bos");
+            }
         }
     }
 }
