@@ -22,15 +22,15 @@ public class PlayerMovement : MonoBehaviour
     }
     void Movement()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position += new Vector3(-movementSpeed, 0) * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += new Vector3(movementSpeed, 0) * Time.deltaTime;
         }
-        if ((onGround == true) && (Input.GetKeyDown(KeyCode.W))|| (onGround == true) && (Input.GetKeyDown(KeyCode.UpArrow)))
+        if ((onGround == true) && (Input.GetKeyDown(KeyCode.W))|| (onGround == true) && (Input.GetKeyDown(KeyCode.UpArrow)) || (onGround == true) && (Input.GetKeyDown(KeyCode.Space)))
         {
             Vector2 jump = new Vector2(0, jumpHeight);
             player.velocity = new Vector2(player.velocity.x, 0);
