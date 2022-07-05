@@ -5,24 +5,27 @@ using UnityEngine;
 public class animationControll : MonoBehaviour
 {
     public GameObject player;
-    // Update is called once per frame
-    void Start(){
-       
-    }
+    public Animator animate;
+    bool isPlaying;
     void Update()
     {
-        var Player = player.GetComponent<Animator>();
         if (Input.GetKeyDown("space") || Input.GetKeyDown("w") ){
-            Player.Play("Jumping");
+            animate.Play("Jumping");
         }
         if (Input.GetKeyDown("f")){
-            Player.Play("Attack");
+            animate.Play("Attack");
         }
         if (Input.GetKeyDown("d") || Input.GetKeyDown("a")){
-            Player.Play("Walk_Cycle");
+            isPlaying = true;
+        }
+         if (Input.GetKeyUp("d") || Input.GetKeyUp("a")){
+            isPlaying = false;
+        }
+        if (isPlaying == true){
+            animate.Play("Walk_Cycle");
         }
         if (Input.GetKeyDown("e")){
-            Player.Play("Pick_Up");
+            animate.Play("Pick_Up");
         }
     }
 }
