@@ -7,13 +7,13 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
-    public float AttackRange = 0.5f;
-    public int AttackDmg = 50;
+    public float attackRange = 0.5f;
+    public int AttackDmg = 10;
     
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             Attack();
         }
@@ -21,11 +21,20 @@ public class PlayerCombat : MonoBehaviour
 
     void Attack()
     {
-        Collider2D[] hitEnemy = Physics2D.OverlapCircleAll(attackPoint.position, AttackRange, enemyLayers);
         
-        foreach(Collider2D Enemy in hitEnemy)
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        
+        foreach(Collider2D Enemy in hitEnemies)
         {
-            Enemy.GetComponent<health>().DamagePlayer(AttackDmg);
+            Enemy.GetComponent<PowderBall>().Hit(AttackDmg);
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+        return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }

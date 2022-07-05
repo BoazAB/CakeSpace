@@ -8,8 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private float movementSpeed = 10;
     private Rigidbody2D player;
     [SerializeField]
-    private float jumpHeight = 27;
+    private float jumpHeight = 10;
     private bool onGround;
+    public bool moving;
 
     void Update()
     {
@@ -25,10 +26,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position += new Vector3(-movementSpeed, 0) * Time.deltaTime;
+            moving = true;
         }
         if (Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += new Vector3(movementSpeed, 0) * Time.deltaTime;
+            moving = true;
         }
         if ((onGround == true) && (Input.GetKeyDown(KeyCode.W))|| (onGround == true) && (Input.GetKeyDown(KeyCode.UpArrow)) || (onGround == true) && (Input.GetKeyDown(KeyCode.Space)))
         {
@@ -36,13 +39,14 @@ public class PlayerMovement : MonoBehaviour
             player.velocity = new Vector2(player.velocity.x, 0);
             player.AddForce(jump, ForceMode2D.Impulse);
             onGround = false;
+            moving = true;
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         onGround = true;
     }
-    private void OnCollisionExit2D(Collision2D collision)
+    void OnCollisionExit2D(Collision2D collision)
     {
         onGround = false;
     }

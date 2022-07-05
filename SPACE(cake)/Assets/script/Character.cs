@@ -18,6 +18,8 @@ public class Character : MonoBehaviour
     public bool spawnFacingLeft = true;
     private Vector2 facingLeft;
 
+    public Animator animator;
+
 
     // Start is called before the first frame update
     void Start()

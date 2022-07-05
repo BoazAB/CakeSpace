@@ -8,7 +8,7 @@ public class Movement : Character
     public float distanceToCollider;
     public LayerMask collisionLayer;
 
-    private float horizontalInput;
+    public float horizontalInput;
 
     // Update is called once per frame 
     void Update()
